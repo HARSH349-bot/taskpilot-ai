@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  
+  /* Redesign Flat Color Scheme */
+  --dashboard-teal: #1e5e5a;
+  --dashboard-orange: #e1573c;
+  --dashboard-purple: #8c92ac;
+  --dashboard-light-blue: #eaf4f7;
+  
+  /* Cyberpunk legacy themes */
+  --brand-teal-dark: #061f20;
+  --brand-teal: #0c2d2e;
+  --brand-teal-light: #114e50;
+  --neon-teal: #2dd4bf;
+  --neon-orange: #f97316;
+  --neon-purple: #c084fc;
+}
+
+@theme {
+  --color-dashboard-teal: var(--dashboard-teal);
+  --color-dashboard-orange: var(--dashboard-orange);
+  --color-dashboard-purple: var(--dashboard-purple);
+  --color-dashboard-light-blue: var(--dashboard-light-blue);
+  
+  --color-brand-teal-dark: var(--brand-teal-dark);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-teal-light: var(--brand-teal-light);
+  --color-neon-teal: var(--neon-teal);
+  --color-neon-orange: var(--neon-orange);
+  --color-neon-purple: var(--neon-purple);
+  
+  --animate-scan: scan 6s linear infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Styles (For Login logs & 3D widgets) */
+.glass-panel {
+  background: rgba(12, 45, 46, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(45, 212, 191, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-orange {
+  background: rgba(46, 27, 12, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-purple {
+  background: rgba(35, 12, 46, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(192, 132, 252, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Industrial Action Button style */
+.btn-industrial {
+  background: linear-gradient(180deg, #c2410c 0%, #9a3412 100%);
+  border: 1px solid #ea580c;
+  box-shadow: 
+    0 0 15px rgba(249, 115, 22, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-industrial:hover {
+  background: linear-gradient(180deg, #ea580c 0%, #c2410c 100%);
+  box-shadow: 
+    0 0 25px rgba(249, 115, 22, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-industrial:active {
+  transform: translateY(1px);
+  box-shadow: 
+    0 0 10px rgba(249, 115, 22, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Flat Redesign Buttons */
+.btn-flat-black {
+  background-color: #0f172a;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+.btn-flat-black:hover {
+  background-color: #1e293b;
+  transform: translateY(-1px);
+}
+.btn-flat-black:active {
+  transform: translateY(0);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+

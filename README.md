@@ -16,6 +16,7 @@ graph TD
     
     F --> G[Task Dashboard]
     F --> H[Timeline & Risk Analyzer]
+    F --> I[Flashcards Review]
     
     G --> G1[Awaiting Execution / Active / Hold Metrics]
     G --> G2[6-Block Task Summary Grid]
@@ -27,6 +28,10 @@ graph TD
     H --> H3[Operational Strain Sliders]
     H3 -->|Update Parameters| H2
     H2 -->|Status Check| H1
+
+    I --> I1[3D Flip Concept Cards]
+    I --> I2[Category Filter: DevOps/Security/Backend]
+    I --> I3[Custom Cards Creation & Persistent Store]
 ```
 
 ---
@@ -48,6 +53,12 @@ graph TD
 - **Resource Balancer Chart**: A live updates bar chart displaying utilization percentages for Core Dev, Dev Ops, UI/UX, Security, and API.
 - **Operational Strain Controls**: Live sliders (Scope Creep, Team Fatigue, Resource Cap) that dynamically update the Resource Balancer loads and milestone risks on the fly.
 - **Simulation trigger**: Automates parameter stress variations to simulate real-time resource adjustments.
+
+### 4. Interactive Flashcards Review Center
+- **3D Card Flipping**: Spin concept cards using 3D perspective transforms to reveal answers.
+- **Categorization & Pagination**: Filter cards by DevOps, Security, Backend, UI/UX, or General sectors.
+- **Operator Customization**: Add custom cards that persist in browser local storage.
+- **Operational Progress Tracker**: Metrics display Learned vs. Review pending count dynamically.
 
 ---
 

@@ -6,6 +6,7 @@ import LoginCenter from "../components/LoginCenter";
 import Dashboard from "../components/Dashboard";
 import TimelineProjection from "../components/TimelineProjection";
 import CalendarTimeline from "../components/CalendarTimeline";
+import FlashcardReview from "../components/FlashcardReview";
 import { 
   CheckSquare, 
   Terminal, 
@@ -15,18 +16,19 @@ import {
   Lock, 
   Compass,
   UserCheck2,
-  CalendarDays
+  BookOpen
 } from "lucide-react";
 
 function CommandCenterContent() {
   const { isAuthenticated, user, logout } = useAuth();
-  const [activeTab, setActiveTab] = useState<"onboarding" | "dashboard" | "timeline">("onboarding");
+  const [activeTab, setActiveTab] = useState<"onboarding" | "dashboard" | "timeline" | "flashcard">("onboarding");
 
   // Navigation Sidebar tabs
   const tabs = [
     { id: "onboarding" as const, label: "Onboarding & Auth", icon: Terminal },
     { id: "dashboard" as const, label: "Task Dashboard", icon: LayoutDashboard },
-    { id: "timeline" as const, label: "Timeline & Risk", icon: GitCommit }
+    { id: "timeline" as const, label: "Timeline & Risk", icon: GitCommit },
+    { id: "flashcard" as const, label: "Flashcards", icon: BookOpen }
   ];
 
   return (
@@ -159,8 +161,10 @@ function CommandCenterContent() {
           isAuthenticated ? (
             activeTab === "dashboard" ? (
               <Dashboard />
-            ) : (
+            ) : activeTab === "timeline" ? (
               <TimelineProjection />
+            ) : (
+              <FlashcardReview />
             )
           ) : (
             /* Restricted Gate access prompt */
